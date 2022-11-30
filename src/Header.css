@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f9f9f9;
+    
+}
+.header__logo{ 
+    height: 50px;
+    object-fit: contain;
+
+}
+
+.header_icon{
+    padding: 20px; 
+}
+.match_words{
+    text-align: center;
+    font-size: 3vw
+}

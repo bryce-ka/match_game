@@ -1,0 +1,16 @@
+.cardback{
+    border-radius: 25px;
+    background: #E8C4C4;
+    height: auto;
+    /* max-height: 60%; */
+}
+.side_button{
+    padding-top: 18%;
+    font-size: 4vw;
+    text-align: center;
+    color: #CE7777;
+}
+
+.hide_overflow{
+    overflow: hidden; 
+}

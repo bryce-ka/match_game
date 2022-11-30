@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import Header from "./Header";
+import Intro from "./Intro";
+import Swipe from "./Swipe";
+import Tutorial from "./Tutorial";
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>match, Match, MATCH </h1> */}
+      {/* signup screen  */}
+      {/* <Registration /> */}
+      {/* Profile screen */}
+      {/* Header */}
+      <Router>
+        <Header />
+        <Routes>
+        <Route path="/prologue" element={<Intro/>} />  
+        <Route path="/tutorial" element={<Tutorial/>} /> 
+        <Route path="/" element={<h1>Homepage</h1>} />
+        <Route path="/swipe" element={<Swipe/>} />
+        </Routes>
+      {/* <Header /> */}
+      {/* tinder clone */}
+
+      {/* buttons below cards */}
+
+      {/* Chaats Screen  */}
+      {/* Indvidual chat screen */}
+      {/* Match Screen  */}
+      </Router>
     </div>
   );
 }

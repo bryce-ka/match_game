@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "match_match_match",
+    "builds": [
+       { "src": "App.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+       { "src": "/(.*)", "dest": "/App.js" }
+    ]
+ }
