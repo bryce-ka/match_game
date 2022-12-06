@@ -3,6 +3,7 @@ import Header from "./Header";
 import Intro from "./Intro";
 import Swipe from "./Swipe";
 import Tutorial from "./Tutorial";
+import SwipeButtons from "./Swipe_buttons";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -21,12 +22,12 @@ function App() {
       {/* Profile screen */}
       {/* Header */}
       <Router>
-        <Header />
+        
         <Routes>
-        <Route path="/prologue" element={<Intro/>} />  
-        <Route path="/tutorial" element={<Tutorial/>} /> 
-        <Route path="/" element={<h1>Homepage</h1>} />
-        <Route path="/swipe" element={<Swipe/>} />
+        <Route path="/intro" element={[, <Header />,<Intro/>]} />  
+        <Route path="/tutorial" element={[<Header />, <Tutorial />]} /> 
+        <Route path="/leaderboard" element={[<Header />]} />
+        <Route path="/play" element={[<Header />,<Swipe/>]} />
         </Routes>
       {/* <Header /> */}
       {/* tinder clone */}
@@ -35,7 +36,8 @@ function App() {
 
       {/* Chaats Screen  */}
       {/* Indvidual chat screen */}
-      {/* Match Screen  */}
+        {/* Match Screen  */}
+        
       </Router>
     </div>
   );

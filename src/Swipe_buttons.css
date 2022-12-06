@@ -1,0 +1,33 @@
+.swipe_buttons{
+    position:fixed;
+    bottom: 10vh; 
+    width:100%;
+    display: flex; 
+    justify-content: space-evenly;
+
+}
+
+.heart{
+    color: #CE7777 !important;
+    font-size: 4.5vw !important;
+}
+
+.x{
+    color: #CE7777 !important;
+    font-size: 9vw !important;
+}
+
+.swipe_buttons .MuiIconButton-root{
+    background-color: white;
+    box-shadow: 0px 10px 53px 0px rgb(177, 177, 177) !important; 
+    height: 8vw;
+    width: 8vw;
+}
+
+.heart .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before{
+    vertical-align: -0.21em;
+}
+
+.x .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before{
+    vertical-align: -0.125em;
+}

@@ -1,20 +1,51 @@
 .card{
     position: relative; 
-    width: 600px; 
+    top: -5vh;
+    width: 66vw; 
     padding: 20px; 
-    max-width: 85vw; 
+    max-width: 66vw; 
     height: 65vh;
     border-radius: 20px;
     background-size: cover;
-    background-position: center; 
-    box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+    background-position: center;
+    background-color: #E8C4C4;  
+    box-shadow: 0px 18px 30px 0px rgba(0, 0, 0, 0.3);
 }
-
+.card2{
+    position: relative; 
+    top: 0vh;
+    left:16vw;
+    width: 64vw; 
+    padding: 20px;  
+    /* max-width: 66vw;  */
+    height: 50vh;
+    text-align: center;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-color: #E8C4C4;  
+    box-shadow: 0vh 1vw 2vh 0vw rgba(0, 0, 0, 0.3);
+}
+.card3{
+    top: 0vh;
+    left:16vw;
+    width: 64vw; 
+    padding: 20px;  
+    /* max-width: 66vw;  */
+    height: 50vh;
+    text-align: center;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-color: #E8C4C4;  
+    box-shadow: 0vh 1vw 2vh 0vw rgba(0, 0, 0, 0.3);
+}
 
 .match_card_container{
     display: flex; 
     justify-content: center; 
     margin-top: 5vh; 
+    max-width: 66vw;
 
 }
 .swipe{
@@ -27,4 +58,15 @@ h1{
 }
 .bio{
     margin-top: 35vh;
+}
+.picture{
+    text-align: left !important;
+    
+    
+}
+.healthBar{
+    text-align: center;
+}
+.progress{
+    text-align: center !important;
 }

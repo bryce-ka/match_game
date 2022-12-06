@@ -1,11 +1,30 @@
-.cardback{
-    border-radius: 25px;
-    background: #E8C4C4;
-    padding: 1vw 3vw;
+.cardback {
+ margin-top: 3vh;
+  border-radius: 25px;
+  background: #e8c4c4;
+  padding: 2vw;
 }
-p{
-    font-size: xx-large;
+p {
+  font-size: xx-large;
+  text-align: center;
 }
 .arrow__icon{
-    height: 50px;
+  padding: 0px;
+  color: #2b3a55;
+  font-size: 4.5rem;
+}
+.next {
+  text-align: center;
+
+}
+
+.next .MuiIconButton-root{
+    background-color: white;
+    box-shadow: 0px 5px 10px 0px rgb(177, 177, 177) !important; 
+}
+.button_arrow{
+margin: 2vh 2vh 2vh 2vh !important;
+padding:3wv !important;
+
+
 }
