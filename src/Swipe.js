@@ -7,7 +7,7 @@ import { Await } from "react-router-dom";
 // need an array for swipable peoples info
 
 
-var is_match;
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -39,19 +39,19 @@ async function get_user() {
       "https://xsgames.co/randomusers/assets/avatars/male/" +
       getRandomIntInclusive(0, 78) +
       ".jpg";
-    if (u % 2 == 0) {
+    if (u % 2 === 0) {
       pic =
         "https://xsgames.co/randomusers/assets/avatars/female/" +
         getRandomIntInclusive(0, 78) +
         ".jpg";
     }
-    let int = getRandomIntInclusive(0, 1);
+    // let int = getRandomIntInclusive(0, 1);
     let profile = {
       id: users[u].uid,
       first_name: users[u].first_name,
       job: users[u].employment.title,
       location: users[u].address.city + ", " + users[u].address.state,
-      match: int,
+      // match: int,
       pic: pic,
     };
     profiles[u] = profile;
@@ -108,8 +108,9 @@ function Swipe() {
   };
 
   const swipe = async (dir) => {
-    let match;
-    if (dir == "left") {
+    let is_match = getRandomIntInclusive(0, 1);
+    let match = 0;
+    if (dir === "left") {
       match = 0;
     } else {
       match = 1;
@@ -119,24 +120,22 @@ function Swipe() {
     }
     console.log(typeof(is_match), typeof(match))
     console.log(is_match, match)
-    if (is_match !== match) {
+    if ( is_match !== match) {
       console.log("you lost health")
       health(10);
     }
   };
-  function health(loss_val) {}
-
-  useEffect(() => {}, [profiles]);
+  function health(loss_val) { }
 
   return (
     <div>
       <div className="progress container-fluid col-8 ">
-      <div class="progress-bar-striped bg-success w-50 healthBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      <div className="progress-bar-striped bg-success w-50 healthBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
         </div>
       <div className="row">
         <div className="col-10">
           <div className="match_card_container">
-            {profiles.map((person, index) => (
+            {profiles.map((person, index, extra) => (
               <TinderCard
                 ref={childRefs[index]}
                 className="swipe"
@@ -145,7 +144,6 @@ function Swipe() {
                 onCardLeftScreen={() => outOfFrame(person.id, index)}
               >
                 <div className="card2">
-                  {(is_match = person.match)}
                   <div className="row">
                     <div className="column-sm-6 pro_pic">
                       <img src={person.pic} alt="profile pic"></img>

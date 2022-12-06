@@ -24,7 +24,7 @@ function App() {
       <Router>
         
         <Routes>
-        <Route path="/intro" element={[, <Header />,<Intro/>]} />  
+        <Route path="/" element={[<Header />,<Intro/>]} />  
         <Route path="/tutorial" element={[<Header />, <Tutorial />]} /> 
         <Route path="/leaderboard" element={[<Header />]} />
         <Route path="/play" element={[<Header />,<Swipe/>]} />
