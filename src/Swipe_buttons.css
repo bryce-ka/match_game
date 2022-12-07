@@ -1,6 +1,6 @@
 .swipe_buttons{
     position:fixed;
-    bottom: 10vh; 
+    bottom: 4vh; 
     width:100%;
     display: flex; 
     justify-content: space-evenly;
@@ -11,6 +11,10 @@
     color: #CE7777 !important;
     font-size: 4.5vw !important;
 }
+.heart2{
+    color: #CE7777 !important;
+    font-size: 2.5vw !important;
+}
 
 .x{
     color: #CE7777 !important;
@@ -19,7 +23,7 @@
 
 .swipe_buttons .MuiIconButton-root{
     background-color: white;
-    box-shadow: 0px 10px 53px 0px rgb(177, 177, 177) !important; 
+    box-shadow: 0px 10px 15px 0px rgb(177, 177, 177) !important; 
     height: 8vw;
     width: 8vw;
 }

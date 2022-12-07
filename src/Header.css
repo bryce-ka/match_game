@@ -29,3 +29,6 @@ a{
     text-decoration: none;
     color:inherit;
 }
+.front{
+    z-index: 25;
+}

@@ -7,36 +7,28 @@ import "./Swipe_buttons.css";
 
 const db = [
   {
-    text: "How much can your heart take?",
+    text: "How much can your heart take? Click the person icon in the top left corner to begin.",
     match: 5,
   },
   {
-    text: "Be careful, If you loose too much health you'll die of heartbreak.",
+    text: "Be careful, If you loose too much health you'll die of heartbreak. (Swipe)",
     match: 5,
   },
   {
-    text: "fail to make the same choice as the other user and you'll loose health.",
-    match: 5,
-  },
-
-  {
-    text: "But dont be fooled, theyre swiping on you too!",
-    match: 5,
-  },
-
-  {
-    text: "Swipe right (or click the heart) to match. Swipe left (or click the X) to not match.",
+    text: "fail to make the same choice as the other user and you'll loose health.  (Swipe)",
     match: 5,
   },
   {
-    text: "This is a card.",
+    text: "click the X to swipe left.",
+    match: 5,
+  },
+  {
+    text: "This is a card. Click the heart to swipe right.",
     match: 5,
   },
 ];
 
 function Tutorial() {
-  console.log("type: " + typeof(db))
-  console.log(db)
   const [currentIndex, setCurrentIndex] = useState(db.length - 1);
   const [lastDirection, setLastDirection] = useState();
   // used for outOfFrame closure

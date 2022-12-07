@@ -8,14 +8,14 @@ import {Link} from "react-router-dom"
 function Header() {
   return (
     // bem
-    <div>
+    <div className= "front">
       <div className="header">
         <Link to = "/play">
           <IconButton>
             <i className="leaderboard header__icon bi bi-person-square"></i>
           </IconButton>
               </Link>
-              <Link to = "/intro">
+              <Link to = "/">
         <h2 className="match_words">Match, Match, Match</h2>
             </Link>
         <Link to="/leaderboard">

@@ -65,8 +65,16 @@ h1{
     
 }
 .healthBar{
-    text-align: center;
-}
-.health{
     
+}
+.progress{
+    text-align: center !important;
+}
+.bio{
+    text-align:right;
+    margin-top:6vh;
+}
+
+.name{
+    margin-top: 3vh;
 }
