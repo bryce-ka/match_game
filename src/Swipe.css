@@ -24,15 +24,16 @@
     background-size: cover;
     background-position: center;
     background-color: #E8C4C4;  
-    box-shadow: 0vh 1vw 2vh 0vw rgba(0, 0, 0, 0.3);
+    
 }
+/* box-shadow: 0vh 1vw 2vh 0vw rgba(0, 0, 0, 0.3); */
 .card3{
     top: 0vh;
     left:16vw;
     width: 64vw; 
     padding: 20px;  
     /* max-width: 66vw;  */
-    height: 50vh;
+    height: 40vh;
     text-align: center;
     border-radius: 20px;
     background-size: cover;
@@ -61,20 +62,23 @@ h1{
 }
 .picture{
     text-align: left !important;
-    
-    
+
 }
-.healthBar{
-    
+
+.icon{
+    font-size: 3vw !important; 
 }
 .progress{
     text-align: center !important;
 }
 .bio{
-    text-align:right;
     margin-top:6vh;
 }
 
 .name{
-    margin-top: 3vh;
+    /* margin-top: 3vh; */
+    font-size: 4vw;
+}
+life{
+   text-align: center;
 }

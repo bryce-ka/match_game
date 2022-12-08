@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import TinderCard, { contextTypes } from "react-tinder-card";
 import "./Tutorial.css";
 import "./Swipe.css";
@@ -49,7 +49,7 @@ var hobby_list = [
   "Electronic games",
   "Electronics",
   "Embroidery",
-  " Engraving",
+  "Engraving",
   "Entertaining",
   "Everyday carry",
   "Experimenting",
@@ -141,8 +141,8 @@ var hobby_list = [
   "Yoga",
   "Zumba",
 ];
-var lifebar = lifebar = (
-  <div className="row container-fluid">
+var lifebar = (lifebar = (
+  <div className="row container-fluid life">
     <div className="col-1 heart2">
       <i class="bi bi-heart-fill"></i>
     </div>
@@ -173,15 +173,10 @@ var lifebar = lifebar = (
     <div className="col-1 heart2">
       <i class="bi bi-heart-fill"></i>
     </div>
-    <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
-    </div>
-    <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
-    </div>
-  </div>);
+  </div>
+));
 
-var current_health = 120;
+var current_health = 100;
 var hobbies;
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -190,7 +185,6 @@ function getRandomIntInclusive(min, max) {
 }
 
 const profiles = new Array(100).fill({});
-
 
 async function get_hobby() {
   hobbies = [];
@@ -314,548 +308,401 @@ function Swipe() {
   function health(loss_val) {
     current_health = current_health - loss_val;
     console.log(String(current_health));
-    if (current_health == 120) {
+    if (current_health == 100) {
       lifebar = (
-        <div className="row container-fluid">
+        <div className="row container-fluid text-center">
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heartbreak"></i>
           </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-        </div>)
-      
-    }else if (current_health == 110) {
+        </div>
+      );
+    } else if (current_health == 90) {
       lifebar = (
-        <div className="row container-fluid">
+        <div className="row container-fluid text-center">
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heartbreak"></i>
           </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-      
-    }else if (current_health == 100) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-      
-    }else if (current_health == 90) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-      
+        </div>
+      );
     } else if (current_health == 80) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heartbreak"></i>
           </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-      }
-    else if (current_health == 70) { 
+        </div>
+      );
+    } else if (current_health == 70) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 60) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+            <i class="bi bi-heart-fill"></i>
           </div>
-        </div>)
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 50) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 40) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 30) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 20) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 10) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
+    } else if (current_health == 0) {
+      lifebar = (
+        <div className="row container-fluid">
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+          <div className="col-1 heart2">
+            <i class="bi bi-heartbreak"></i>
+          </div>
+        </div>
+      );
     }
-    else if (current_health == 60) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-     }
-    else if (current_health == 50) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-    }
-    else if (current_health == 40) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-     }
-    else if (current_health == 30) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-     }
-    else if (current_health == 20) { 
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-    }
-    else if (current_health == 10) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heart-fill"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-     }
-    else if (current_health == 0) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>)
-     }
   }
 
   return (
-    
     <div>
       <div>
         <br></br>
-      {lifebar}
+        {lifebar}
       </div>
+      {/* <div className = "card3"> */}
       <div className="row">
         <div className="col-10">
           <div className="match_card_container">
@@ -867,36 +714,53 @@ function Swipe() {
                 onSwipe={(dir) => swiped(dir, person.id, index)}
                 onCardLeftScreen={() => outOfFrame(person.id, index)}
               >
-                <div className="card2">
-                  <div className="row">
-                    <div className="col-5">
-                      <row>
-                        <br></br>
-                        <img src={person.pic} alt="profile pic"></img>
-                      </row>
-                      <row>
-                        <h2 className="card_text name">{person.first_name}</h2>
-                      </row>
-                    </div>
-                    <div className="col-7 bio">
-                      <div className="row profile">
-                        <p className="card_text">
-                          <i className="bi bi-briefcase"></i> {person.job}
-                        </p>
+                
+                  <div className="card2">
+                    <div className="row">
+                      <div className="col-5">
+                        <row>
+                          <br></br>
+                          <img src={person.pic} alt="profile pic"></img>
+                        </row>
+                        <row>
+                          <h2 className="card_text name">
+                            {person.first_name}
+                          </h2>
+                        </row>
                       </div>
-                      <div className="row">
-                        <p className="card_text">
-                          <i className="bi bi-geo-alt"></i> {person.location}
-                        </p>
-                      </div>
-                      <div className="row">
-                        <p className="card_text">
-                          <i className="bi bi-palette"></i> {person.hobby}
-                        </p>
+                      <div className="col-7 bio">
+                        <div className="row">
+                          <div className="col-3 icon text-start">
+                            <i className="bi bi-briefcase"></i>
+                          </div>
+                          <div className="col-9 icon text-star">
+                            <p className="card_text text-start">{person.job}</p>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-3 icon text-start">
+                            <i className="bi bi-geo-alt"></i>
+                          </div>
+                          <div className="col-9 text-start">
+                            <p className="card_text text-start">
+                              {person.location}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-3 icon text-start">
+                            <i className="bi bi-palette"></i>
+                          </div>
+                          <div className="col-9">
+                            <p className="card_text text-start">
+                              {person.hobby}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                
               </TinderCard>
             ))}
           </div>
@@ -911,7 +775,8 @@ function Swipe() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    // </div>
   );
 }
 
