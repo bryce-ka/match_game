@@ -826,7 +826,7 @@ function Swipe() {
                       <div className="col-5">
                         <div className="row">
                           <br></br>
-                          <img src={person.pic} alt="profile pic"></img>
+                          <img className="photo" src={person.pic} alt="profile pic"></img>
                         </div>
                         <div className="row">
                           <h2 className="card_text name">

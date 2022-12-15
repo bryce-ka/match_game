@@ -117,10 +117,7 @@ h1{
     box-shadow: 0vh 1vw 2vh 0vw rgba(0, 0, 0, 0.3);
 }
 
-/* .leaderboard{
-    position: fixed;
-    margin-top: 10vh;
-    /* margin-left: 40vh; */
-    /* z-index: -1 */
-/* }  */
+.photo{
+    max-width: 85%;
+}
 
