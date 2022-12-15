@@ -1,0 +1,46 @@
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  } */
+.background{
+    background-color:#2B3A55;
+    margin-top:  1.5vh;
+    padding-bottom:.5vh;
+    text-align:center;
+    border-radius: 20px;
+    padding-top: .5vh;
+}
+.cards{
+    background-color:#E8C4C4;
+    margin: 1.25vh 2.5vw 1.25vh 2.5vw ;
+    border-radius: 20px;
+    
+}
+.number{
+    color: #CE7777;
+    font-size: 4vw;
+    font-style: bold
+}
+.box_sizing{
+    padding:1vh
+}
+.title{
+    color: #CE7777;
+    font-size: 6vh;
+    margin-bottom:0vh;
+}
+.intitials{
+    font-size: 4vw;
+    font-style: bold;
+    margin:auto;
+}
+.score_num{
+    margin: auto;
+    font-size: 4vw;
+    font-style: bold
+}

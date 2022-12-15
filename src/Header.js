@@ -10,7 +10,7 @@ function Header() {
     // bem
     <div className= "front">
       <div className="header">
-        <Link to = "/play">
+        <Link to = "/play?">
           <IconButton>
             <i className="leaderboard header__icon bi bi-person-square"></i>
           </IconButton>
@@ -18,7 +18,7 @@ function Header() {
               <Link to = "/">
         <h2 className="match_words">Match, Match, Match</h2>
             </Link>
-        <Link to="/leaderboard">
+        <Link to="/leaderboard?">
           <IconButton>
             <i className="leaderboard header__icon bi bi-person-lines-fill"></i>
           </IconButton>

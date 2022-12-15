@@ -1,11 +1,30 @@
 import React, { useState, useMemo, useRef } from "react";
-import TinderCard, { contextTypes } from "react-tinder-card";
+import TinderCard from "react-tinder-card";
 import "./Tutorial.css";
 import "./Swipe.css";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+// import 'bootstrap/dist/js/bootstrap.min.js';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { IconButton } from "@mui/material";
-import { Await } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { Await } from "react-router-dom";
 // need an array for swipable peoples info
-
+var person_id = "";
+var score = 0;
+var scores = [
+  ["LVR", 100],
+  ["BOI", 83],
+  ["HOT", 79],
+  ["SKT", 61],
+  ["DJE", 55],
+  ["LUV", 53],
+  ["STI", 30],
+  ["ASS", 29],
+  ["STD", 27],
+  ["BOB", 17],
+];
+var initials = "";
 var hobby_list = [
   "3D printing",
   "Acroyoga",
@@ -141,7 +160,7 @@ var hobby_list = [
   "Yoga",
   "Zumba",
 ];
-var lifebar = (lifebar = (
+var lifebar = (
   <div className="row container-fluid life">
     <div className="col-1 heart2">
       <i class="bi bi-heart-fill"></i>
@@ -174,14 +193,83 @@ var lifebar = (lifebar = (
       <i class="bi bi-heart-fill"></i>
     </div>
   </div>
-));
+);
 
 var current_health = 100;
 var hobbies;
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+function refreshPage() {
+  window.location.reload(false);
+}
+
+function MyVerticallyCenteredModal(props) {
+  if (score > scores[9][1]) {
+    update_leaderboard();
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        backdrop="static"
+        keyboard="false"
+        onClose="false"
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            <h4>Congrats you made the leaderboard!</h4>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>View the leaderboard, manifesto or play again by clicking below</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Link to="/leaderboard">
+            <Button type="submit">Leaderboard</Button>
+          </Link>
+          <Link to="/manifesto">
+            <Button type="submit">Learn more</Button>
+          </Link>
+          <Button type="submit" onClick={refreshPage}>
+            Play again
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  } else {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        backdrop="static"
+        keyboard="false"
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Aww, you died of heartbreak!</p>
+          <p>View the leaderboard, manifesto or play again by clicking below</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Link to="/leaderboard">
+            <Button onClick={props.onHide}>Leaderboard</Button>
+          </Link>
+          <Link to="/manifesto">
+            <Button onClick={props.onHide}>Learn more</Button>
+          </Link>
+          <Button onClick={refreshPage}>Play again</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 }
 
 const profiles = new Array(100).fill({});
@@ -238,9 +326,10 @@ async function get_user() {
   return profiles;
 }
 
-get_user();
-
 function Swipe() {
+  get_user();
+  const [modalShow, setModalShow] = React.useState(false);
+
   // goal create an array of 100 people
   //get array data from api
   //      https://random-data-api.com/api/v2/users?size=100
@@ -250,7 +339,6 @@ function Swipe() {
   //use array as db for match game. (max 100 or 158)
 
   const [currentIndex, setCurrentIndex] = useState(profiles.length - 1);
-  const [lastDirection, setLastDirection] = useState();
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex);
 
@@ -267,18 +355,15 @@ function Swipe() {
     currentIndexRef.current = val;
   };
 
-  const canGoBack = currentIndex < profiles.length - 1;
-
   const canSwipe = currentIndex >= 0;
 
   // set last direction and decrease current index
   const swiped = (direction, nameToDelete, index) => {
-    setLastDirection(direction);
     updateCurrentIndex(index - 1);
   };
 
   const outOfFrame = (name, idx) => {
-    console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
+    // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
     // handle the case in which go back is pressed before card goes outOfFrame
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard();
     // TODO: when quickly swipe and restore multiple times the same card,
@@ -286,9 +371,10 @@ function Swipe() {
     // during latest swipes. Only the last outOfFrame event should be considered valid
   };
 
-  const swipe = async (dir) => {
+  const swipe = async (dir, id) => {
     let is_match = getRandomIntInclusive(0, 1);
     let match = 0;
+    // console.log("element, ", document.getElementById(person_id))
     if (dir === "left") {
       match = 0;
     } else {
@@ -297,18 +383,64 @@ function Swipe() {
     if (canSwipe && currentIndex < profiles.length) {
       await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
     }
-    console.log(typeof is_match, typeof match);
-    console.log(is_match, match);
+
     if (is_match !== match) {
-      console.log("you lost health");
+      // console.log("you lost health");
       health(10);
+    } else {
+      score += 1;
+      console.log(score);
     }
   };
 
+  function get_initials() {
+    // console.log("get initials function: ", int);
+    document.getElementById("all_profiles").style.display = "none";
+    document.getElementById("all_buttons").style.display = "none";
+    document.getElementById("modal_trigger").click();
+  }
+
+  function dead() {
+    lifebar = (
+      <div className="row col-12 container-fluid">
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+        <div className="col-1 heart2">
+          <i class="bi bi-heartbreak"></i>
+        </div>
+      </div>
+    );
+  }
+
   function health(loss_val) {
     current_health = current_health - loss_val;
-    console.log(String(current_health));
-    if (current_health == 100) {
+    // console.log("remaining health: ", current_health);
+    if (current_health === 100) {
       lifebar = (
         <div className="row container-fluid text-center">
           <div className="col-1 heart2">
@@ -343,7 +475,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 90) {
+    } else if (current_health === 90) {
       lifebar = (
         <div className="row container-fluid text-center">
           <div className="col-1 heart2">
@@ -378,7 +510,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 80) {
+    } else if (current_health === 80) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -413,7 +545,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 70) {
+    } else if (current_health === 70) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -448,7 +580,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 60) {
+    } else if (current_health === 60) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -483,7 +615,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 50) {
+    } else if (current_health === 50) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -518,7 +650,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 40) {
+    } else if (current_health === 40) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -553,7 +685,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 30) {
+    } else if (current_health === 30) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -588,7 +720,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 20) {
+    } else if (current_health === 20) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -623,7 +755,7 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 10) {
+    } else if (current_health === 10) {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
@@ -658,64 +790,38 @@ function Swipe() {
           </div>
         </div>
       );
-    } else if (current_health == 0) {
-      lifebar = (
-        <div className="row container-fluid">
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-          <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
-          </div>
-        </div>
-      );
+    } else if (current_health === 0) {
+      dead();
+      get_initials();
     }
   }
 
   return (
     <div>
-      <div>
-        <br></br>
-        {lifebar}
+      <div className="row">
+        <div className="col life">
+          {/* <br></br> */}
+          {lifebar}
+        </div>
       </div>
-      {/* <div className = "card3"> */}
+
       <div className="row">
         <div className="col-10">
-          <div className="match_card_container">
-            {profiles.map((person, index, extra) => (
-              <TinderCard
-                ref={childRefs[index]}
-                className="swipe"
-                key={index}
-                onSwipe={(dir) => swiped(dir, person.id, index)}
-                onCardLeftScreen={() => outOfFrame(person.id, index)}
-              >
-                
-                  <div className="card2">
+          <div className="background-card">
+            <div id="all_profiles" className="match_card_container">
+              <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+              />
+              {profiles.map((person, index) => (
+                <TinderCard
+                  ref={childRefs[index]}
+                  className="swipe"
+                  key={index}
+                  onSwipe={(dir) => swiped(dir, person.id, index)}
+                  onCardLeftScreen={() => outOfFrame(person.id, index)}
+                >
+                  <div className="swipe_card">
                     <div className="row">
                       <div className="col-5">
                         <row>
@@ -760,24 +866,66 @@ function Swipe() {
                       </div>
                     </div>
                   </div>
-                
-              </TinderCard>
-            ))}
-          </div>
-          <div className="swipe_buttons">
-            <IconButton className="x" onClick={() => swipe("left")}>
-              <i className="bi bi-x"></i>
-            </IconButton>
+                </TinderCard>
+              ))}
+              <Button
+                id="modal_trigger"
+                className="leaderboard"
+                onClick={() => setModalShow(true)}
+              ></Button>
+            </div>
+            <div id="all_buttons" className="swipe_buttons2">
+              <IconButton
+                className="x"
+                onClick={() => swipe("left", person_id)}
+              >
+                <i className="bi bi-x"></i>
+              </IconButton>
 
-            <IconButton className="heart" onClick={() => swipe("right")}>
-              <i className="bi bi-heart-fill"></i>
-            </IconButton>
+              <IconButton
+                className="heart"
+                onClick={() => swipe("right", person_id)}
+              >
+                <i className="bi bi-heart-fill"></i>
+              </IconButton>
+            </div>
           </div>
         </div>
       </div>
-      </div>
+    </div>
     // </div>
   );
 }
+// initials = document.getElementById("this_initial")
+initials = "YOU";
+// console.log(initials)
 
+console.log(initials, score, "adding to array");
+function update_leaderboard() {
+  scores.push([initials, score])
+  // for (var i = 0; i < scores.length; i++) {
+  //   console.log(scores, "all scores");
+  //   console.log(initials, score, "new info", scores[i][1]);
+  //   if (scores[i][1] < score) {
+  //     console.log(scores[i], "score in array at i")
+  //     scores[i][0] = initials;
+  //     scores[i][1] = score;
+  //     console.log(scores[i], "updated")
+  //     initials = scores[i][0];
+  //     score = scores[i][1];
+  //   } else{
+  //     console.log("skipped index:", i)
+  //   }
+  console.log(score)
+  scores.sort(
+    (function (index) {
+      return function (a, b) {
+        return a[1] === b[1] ? 0 : a[1] > b[1] ? -1 : 1;
+      };
+    })(2)
+  ); // 2 is the index
+  return scores;
+}
+
+export { scores };
 export default Swipe;

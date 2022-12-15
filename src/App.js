@@ -3,14 +3,14 @@ import Header from "./Header";
 import Intro from "./Intro";
 import Swipe from "./Swipe";
 import Tutorial from "./Tutorial";
-import SwipeButtons from "./Swipe_buttons";
 import './App.css';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
+import Leaderboard from "./Leaderboard";
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         <Routes>
         <Route path="/" element={[<Header />,<Intro/>]} />  
         <Route path="/tutorial" element={[<Header />, <Tutorial />]} /> 
-        <Route path="/leaderboard" element={[<Header />]} />
+        <Route path="/leaderboard" element={[<Header />, <Leaderboard />]} />
         <Route path="/play" element={[<Header />,<Swipe/>]} />
         </Routes>
       {/* <Header /> */}

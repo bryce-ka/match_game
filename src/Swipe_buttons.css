@@ -6,6 +6,15 @@
     justify-content: space-evenly;
 
 }
+.swipe_buttons2{
+    /* position:fixed; */
+    top: 20vh;
+    padding-top: 54vh; 
+    width:100%;
+    display: flex; 
+    justify-content: space-evenly;
+
+}
 
 .heart{
     color: #CE7777 !important;
@@ -13,7 +22,8 @@
 }
 .heart2{
     color: #CE7777 !important;
-    font-size: 1.5vw !important;
+    font-size: 3vw !important;
+    text-align: center;
 }
 
 .x{
@@ -22,6 +32,12 @@
 }
 
 .swipe_buttons .MuiIconButton-root{
+    background-color: white;
+    box-shadow: 0px 10px 15px 0px rgb(177, 177, 177) !important; 
+    height: 8vw;
+    width: 8vw;
+}
+.swipe_buttons2 .MuiIconButton-root{
     background-color: white;
     box-shadow: 0px 10px 15px 0px rgb(177, 177, 177) !important; 
     height: 8vw;
