@@ -7,7 +7,7 @@ import Modal from "react-bootstrap/Modal";
 // import 'bootstrap/dist/js/bootstrap.min.js';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { IconButton } from "@mui/material";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { Await } from "react-router-dom";
 // need an array for swipable peoples info
 var person_id = "";
@@ -163,34 +163,34 @@ var hobby_list = [
 var lifebar = (
   <div className="row container-fluid life">
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
     <div className="col-1 heart2">
-      <i class="bi bi-heart-fill"></i>
+      <i className="bi bi-heart-fill"></i>
     </div>
   </div>
 );
@@ -389,7 +389,7 @@ function Swipe() {
       health(10);
     } else {
       score += 1;
-      console.log(score);
+      // console.log(score);
     }
   };
 
@@ -404,34 +404,34 @@ function Swipe() {
     lifebar = (
       <div className="row col-12 container-fluid">
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
         <div className="col-1 heart2">
-          <i class="bi bi-heartbreak"></i>
+          <i className="bi bi-heartbreak"></i>
         </div>
       </div>
     );
@@ -444,34 +444,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid text-center">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -479,34 +479,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid text-center">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -514,34 +514,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -549,34 +549,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -584,34 +584,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -619,34 +619,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -654,34 +654,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -689,34 +689,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -724,34 +724,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -759,34 +759,34 @@ function Swipe() {
       lifebar = (
         <div className="row container-fluid">
           <div className="col-1 heart2">
-            <i class="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
           <div className="col-1 heart2">
-            <i class="bi bi-heartbreak"></i>
+            <i className="bi bi-heartbreak"></i>
           </div>
         </div>
       );
@@ -824,15 +824,15 @@ function Swipe() {
                   <div className="swipe_card">
                     <div className="row">
                       <div className="col-5">
-                        <row>
+                        <div className="row">
                           <br></br>
                           <img src={person.pic} alt="profile pic"></img>
-                        </row>
-                        <row>
+                        </div>
+                        <div className="row">
                           <h2 className="card_text name">
                             {person.first_name}
                           </h2>
-                        </row>
+                        </div>
                       </div>
                       <div className="col-7 bio">
                         <div className="row">

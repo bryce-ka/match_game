@@ -16,7 +16,7 @@ import Leaderboard from "./Leaderboard";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* <h1>match, Match, MATCH </h1> */}
       {/* signup screen  */}
       {/* <Registration /> */}
@@ -32,15 +32,6 @@ function App() {
         <Route path="/manifesto" element={[<Header />, <Manifesto />]} />
           
         </Routes>
-      {/* <Header /> */}
-      {/* tinder clone */}
-
-      {/* buttons below cards */}
-
-      {/* Chaats Screen  */}
-      {/* Indvidual chat screen */}
-        {/* Match Screen  */}
-        
       </Router>
     </div>
   );
