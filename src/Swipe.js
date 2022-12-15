@@ -7,7 +7,7 @@ import Modal from "react-bootstrap/Modal";
 // import 'bootstrap/dist/js/bootstrap.min.js';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { IconButton } from "@mui/material";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 // import { Await } from "react-router-dom";
 // need an array for swipable peoples info
 var person_id = "";
@@ -233,7 +233,7 @@ function MyVerticallyCenteredModal(props) {
             <Button type="submit">Leaderboard</Button>
           </Link>
           <Link to="/manifesto">
-            <Button type="submit">Learn more</Button>
+            <Button type="submit">Manifesto</Button>
           </Link>
           <Button type="submit" onClick={refreshPage}>
             Play again
@@ -263,7 +263,7 @@ function MyVerticallyCenteredModal(props) {
             <Button onClick={props.onHide}>Leaderboard</Button>
           </Link>
           <Link to="/manifesto">
-            <Button onClick={props.onHide}>Learn more</Button>
+            <Button onClick={props.onHide}>Manifesto</Button>
           </Link>
           <Button onClick={refreshPage}>Play again</Button>
         </Modal.Footer>

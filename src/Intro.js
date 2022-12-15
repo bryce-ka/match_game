@@ -1,16 +1,16 @@
-import { containerClasses } from "@mui/system";
 import React from "react";
 import "./Intro.css";
 import IconButton from "@mui/material/IconButton";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 function Intro() {
   return (
     <div>
       <div className="container">
         <div className="cardback">
+          <p className="title2"> Why play Candy Crush when you can play on Tinder?</p>
           <p>
-            Why play Candy Crush when you can play on Tinder? There's something
+            There's something
             about the app that makes it feel like you're playing a game. You're
             disassociated with reality, anonymously choosing to like or dislike
             someone and then scoring points if they like you back. The dating

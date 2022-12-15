@@ -27,6 +27,7 @@
     
 }
 .swipe_card{
+    overflow: scroll;
     /* margin-top: 2vh; */
     left:16vw;
     width: 64vw; 

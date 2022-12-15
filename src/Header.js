@@ -1,6 +1,4 @@
 import React from "react";
-import PersonIcon from "@mui/icons-material/Person";
-import ForumIcon from "@mui/icons-material/Forum";
 import IconButton from "@mui/material/IconButton";
 import "./Header.css";
 import {Link} from "react-router-dom"
@@ -10,12 +8,12 @@ function Header() {
     // bem
     <div className= "front">
       <div className="header">
-        <Link to = "/play?">
+        <Link to = "/play">
           <IconButton>
             <i className="leaderboard header__icon bi bi-person-square"></i>
           </IconButton>
               </Link>
-              <Link to = "/">
+              <Link to = "/manifesto">
         <h2 className="match_words">Match, Match, Match</h2>
             </Link>
         <Link to="/leaderboard?">

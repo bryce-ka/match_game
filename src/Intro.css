@@ -6,7 +6,12 @@
 }
 p {
   font-size: xx-large;
+  text-align: left;
+}
+.title2{
+  font-size: xx-large;
   text-align: center;
+  color: #2b3a55;
 }
 .arrow__icon{
   padding: 0px;

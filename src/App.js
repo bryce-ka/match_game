@@ -3,6 +3,7 @@ import Header from "./Header";
 import Intro from "./Intro";
 import Swipe from "./Swipe";
 import Tutorial from "./Tutorial";
+import Manifesto from "./Manifesto";
 import './App.css';
 
 import {
@@ -27,7 +28,9 @@ function App() {
         <Route path="/" element={[<Header />,<Intro/>]} />  
         <Route path="/tutorial" element={[<Header />, <Tutorial />]} /> 
         <Route path="/leaderboard" element={[<Header />, <Leaderboard />]} />
-        <Route path="/play" element={[<Header />,<Swipe/>]} />
+        <Route path="/play" element={[<Header />, <Swipe />]} />
+        <Route path="/manifesto" element={[<Header />, <Manifesto />]} />
+          
         </Routes>
       {/* <Header /> */}
       {/* tinder clone */}
