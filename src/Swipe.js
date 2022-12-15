@@ -900,7 +900,7 @@ function Swipe() {
 initials = "YOU";
 // console.log(initials)
 
-console.log(initials, score, "adding to array");
+
 function update_leaderboard() {
   scores.push([initials, score])
   // for (var i = 0; i < scores.length; i++) {
@@ -916,7 +916,6 @@ function update_leaderboard() {
   //   } else{
   //     console.log("skipped index:", i)
   //   }
-  console.log(score)
   scores.sort(
     (function (index) {
       return function (a, b) {

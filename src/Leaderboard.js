@@ -29,7 +29,7 @@ import "./Leaderboard.css";
 
 // }
 
-console.log("all", scores);
+
 
 function Leaderboard() {
   return (
