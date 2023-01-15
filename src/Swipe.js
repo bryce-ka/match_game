@@ -20,8 +20,8 @@ var scores = [
   ["DJE", 55],
   ["LUV", 53],
   ["STI", 30],
-  ["ASS", 29],
-  ["STD", 27],
+  ["ASK", 29],
+  ["SOH", 27],
   ["BOB", 17],
 ];
 var initials = "";
