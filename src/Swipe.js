@@ -22,7 +22,7 @@ var scores = [
   ["STI", 30],
   ["ASK", 29],
   ["SOH", 27],
-  ["BOB", 17],
+  ["BOB", 7],
 ];
 var initials = "";
 var hobby_list = [
