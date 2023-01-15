@@ -477,7 +477,7 @@ function Swipe() {
       );
     } else if (current_health === 90) {
       lifebar = (
-        <div className="row container-fluid text-center">
+        <div className="row d-flex justify-content-around">
           <div className="col-1 heart2">
             <i className="bi bi-heart-fill"></i>
           </div>

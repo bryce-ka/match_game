@@ -28,7 +28,7 @@ function Manifesto() {
             and the emphasis on superficial qualities.
           </p>
         </div>
-        
+      <br></br>
       </div>
     </div>
   );
